@@ -18,6 +18,15 @@ firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const db = firebase.firestore();
 
+db.enablePersistence()
+    .catch((err) => {
+        if (err.code === 'failed-precondition') {
+            console.warn('Множественные вкладки открыты, офлайн режим ограничен');
+        } else if (err.code === 'unimplemented') {
+            console.warn('Браузер не поддерживает офлайн режим');
+        }
+    });
+
 // ==================== ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ ====================
 let currentUser = null;
 let currentChart = null; // Для управления графиками
