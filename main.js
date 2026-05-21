@@ -285,7 +285,7 @@ async function loadDashboard() {
     }, 0);
     
     document.getElementById('total-balance').textContent = 
-        total.toLocaleString('ru-RU', { style: 'currency', currency: 'RUB' });
+        total.toLocaleString('kk-KZ', { style: 'currency', currency: 'KZT' });
     
     // Последние операции
     const recentList = document.getElementById('recent-transactions');
