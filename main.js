@@ -303,7 +303,7 @@ async function loadDashboard() {
                     <div class="transaction-meta">${t.date}</div>
                 </div>
                 <div class="transaction-amount ${t.type === 'income' ? 'income-amount' : 'expense-amount'}">
-                    ${t.type === 'income' ? '+' : '-'}${t.amount.toLocaleString('ru-RU')} ₽
+                    ${t.type === 'income' ? '+' : '-'}${t.amount.toLocaleString('ru-RU')} ₸
                 </div>
             </div>
         `).join('');
@@ -332,7 +332,7 @@ async function loadIncomes() {
             </div>
             <div style="display: flex; align-items: center;">
                 <div class="transaction-amount income-amount">
-                    +${t.amount.toLocaleString('ru-RU')} ₽
+                    +${t.amount.toLocaleString('ru-RU')} ₸
                 </div>
                 <button class="delete-btn" onclick="deleteTransaction('${t.id}')">
                     <i class="fas fa-trash"></i>
@@ -361,7 +361,7 @@ async function loadExpenses() {
             </div>
             <div style="display: flex; align-items: center;">
                 <div class="transaction-amount expense-amount">
-                    -${t.amount.toLocaleString('ru-RU')} ₽
+                    -${t.amount.toLocaleString('ru-RU')} ₸
                 </div>
                 <button class="delete-btn" onclick="deleteTransaction('${t.id}')">
                     <i class="fas fa-trash"></i>
@@ -475,7 +475,7 @@ function updateCategoryTable(transactions) {
         html += `
             <tr>
                 <td><span class="category-badge">${cat}</span></td>
-                <td style="text-align: right;">${catTotal.toLocaleString('ru-RU')} ₽</td>
+                <td style="text-align: right;">${catTotal.toLocaleString('ru-RU')} ₸</td>
                 <td style="text-align: right; font-weight: 600; color: ${percent > 40 ? '#ef4444' : '#10b981'}">
                     ${percent.toFixed(1)}%
                 </td>
